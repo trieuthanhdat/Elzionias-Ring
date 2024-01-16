@@ -1,20 +1,17 @@
-﻿using UnityEngine; using Debug = LogV2;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
-using MovementEffects;
 
 namespace Game.Utils.MessageBus
 {
 	public class MessageBus : MonoSingleton<MessageBus> {
 		private Dictionary<MessageBusType, List<Action<Message>>> listeners = new Dictionary<MessageBusType, List<Action<Message>>>(50);
-		private Timing timer;
 		private Queue<Message> normalMSGs = new Queue<Message>();
 		private float lastBreakTime = 0;
 		private float MAX_FRAME_TIME = 1f/60f;
 		public static bool isInitialize = false;
 		public void Initialize () {
-			timer = gameObject.AddComponent<Timing>();
 			normalMSGs = new Queue<Message>(25);
 			//timer.RunCoroutineOnInstance(ProcessMessage(), Segment.Update);
 			isInitialize = true;

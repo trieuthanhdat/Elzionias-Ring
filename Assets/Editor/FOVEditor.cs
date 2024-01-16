@@ -1,6 +1,5 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using RPG.Core;
 [CustomEditor(typeof(FieldOfView))]
 public class FieldOfViewEditor : Editor
 {

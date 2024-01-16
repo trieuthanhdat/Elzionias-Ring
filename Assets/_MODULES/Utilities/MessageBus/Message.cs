@@ -1,4 +1,4 @@
-﻿using UnityEngine; using Debug = LogV2;
+﻿using UnityEngine; 
 
 namespace Game.Utils.MessageBus {
     public class Message {
